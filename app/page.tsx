@@ -339,9 +339,9 @@ export default function Home() {
                 <p className="text-xs md:text-sm">Question: 8 | Duration: 15 min | Submitted on 5 July 2021</p>
               </div>
               <button className="bg-blue-600 text-white px-2 py-1 text-xs md:px-4 md:py-2 rounded" onClick={update}>Update</button>
-              {showScoreForm && (
+             <div className=''> {showScoreForm && (
                 <ScoreForm onClose={() => setShowScoreForm(false)} onUpdateStatistics={handleUpdateStatistics} />
-              )}
+              )}</div>
             </div>
 
             <div className="mt-4 md:mt-6 bg-gray-50 p-4 rounded-md shadow-md">
@@ -392,7 +392,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-4 md:mt-6 bg-gray-50 p-4 rounded-md shadow-md relative">
+            <div className="mt-4 md:mt-6 bg-gray-50 p-4 rounded-md shadow-md ">
               <h3 className="text-lg md:text-xl font-bold">Question Analysis</h3>
               <p className="mt-2 text-sm md:text-base">You scored {statistics.correctAnswers} correct out of 15. However, it still needs some improvements</p>
               <Piechart score={statistics.correctAnswers} />
