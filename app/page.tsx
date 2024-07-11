@@ -276,7 +276,11 @@ import ComparisonGraph from '../component/ComparisonGraph'; // Ensure the path i
 import Piechart from '../component/Piechart'; // Ensure the path is correct
 import ScoreForm from '../component/ScoreForm'; // Ensure the path is correct
 import { useState } from 'react';
-
+interface Statistics {
+  rank: number;
+  percentile: number;
+  correctAnswers: string;
+}
 export default function Home() {
   const syllabusAnalysis = [
     { title: 'HTML Tools, Forms, History', percentage: 80, color: 'bg-blue-600' },
@@ -296,7 +300,7 @@ export default function Home() {
     setShowScoreForm(true);
   };
 
-  const handleUpdateStatistics = (newStatistics) => {
+  const handleUpdateStatistics = (newStatistics: Statistics) => {
     setStatistics(newStatistics);
     setShowScoreForm(false);
   };
